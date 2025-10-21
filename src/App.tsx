@@ -1,36 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import {MyComponent} from './conponents/learn/MyComponent'
-import {SecondComponent,ThirdComponent} from './conponents/learn/SecondComponent'
+import './conponents/todo/todo.css';
 function App() { 
-  const [count, setCount] = useState(0)
+  
    
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="toto-container">
+        <div className="todo-title"> Todo List</div>
+        <div>
+          <input type="text" />
+          <button>Add</button>
+        </div>
+        <div>
+          <div>learning React</div>
+        </div>
       </div>
-      <h1>Hello world $ NNH</h1>
-      <MyComponent />
-      <SecondComponent />
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      
     </>
   )
 }
