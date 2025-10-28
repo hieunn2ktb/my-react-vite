@@ -6,7 +6,11 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-
+import LoginPage from './pages/login.tsx';
+import RegisterPage from './pages/register.tsx';
+import UserPage from './pages/user.tsx';
+import ProductPage from './pages/product.tsx';
+import './style/global.css';
 
 const router = createBrowserRouter([
   {
@@ -15,19 +19,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <h1>Login Page</h1>,
+    element: <LoginPage />,
   },
   {
     path: "/register",
-    element: <h1>register Page</h1>,
+    element: <RegisterPage/>,
   },
   {
     path: "/users",
-    element: <h1>users Page</h1>,
+    element: <UserPage />,
   },
   {
     path: "/product",
-    element: <h1>product Page</h1>,
+    element: <ProductPage />,
   }
 ]); 
 
