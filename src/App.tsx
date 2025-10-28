@@ -4,16 +4,12 @@ import TodoNew from './conponents/todo/todoNew';
 import reactLogo from './assets/react.svg'
 import { useState } from 'react';
 
+
+// type Todo = { id: number; name: string };
+
 function App() { 
-
-  const propsTest = "This is props test";
-  const[todoList, setTodoList] = useState([
-    {id: 1, name: "Learn React"},
-    {id: 2, name: "Learn Vite"},
-    {id: 3, name: "Learn TypeScript"},
-
-  ]);
-  const addNewTodo = (name:String) => {
+  const[todoList, setTodoList] = useState([]);
+  const addNewTodo = (name:string) => {
     const newTodo = {id: todoList.length + 1, name: name};
     setTodoList([...todoList, newTodo]);
   }
@@ -22,13 +18,29 @@ function App() {
       <div className="toto-container">
         <div className="todo-title"> Todo List</div>
         <TodoNew addNewTodo = {addNewTodo}/>
-        <TodoData
-         name = {propsTest}
-        setTodoList={todoList}
-        />
+        {
+          todoList.length > 0 ? 
+        <TodoData todoList={todoList} setTodoList={setTodoList}/> 
+        :
         <div className='todo-image'>
-        <img src={reactLogo} />
-        </div>
+            <img src={reactLogo} />
+            </div>
+      }
+
+        {/* {
+          todoList.length > 0 && (
+            <TodoData todoList={todoList} setTodoList={setTodoList}/>
+          )
+        }
+      
+        {
+          todoList.length === 0 && (
+            <div className='todo-image'>
+            <img src={reactLogo} />
+            </div>
+          )
+        } */}
+        
       </div>
       
     </>

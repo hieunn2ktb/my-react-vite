@@ -1,12 +1,20 @@
 const TodoData = (props:any) => {
-    const {name} = props;
-    console.log("Props in TodoData component: ", props);
+    const {todoList} = props;
     return (
         <div className="todo-data">
-          <div>learning React {props.name}</div>
-            <div>learning Vite</div>
-            {JSON.stringify(props.setTodoList)}
+            { todoList.map((item , index) => {
+                return (
+                    <div className={`todo-item`} key={item.id}>
+                    <div>{item.name}</div>
+                    <button>Delete</button>
+                    </div>
+                );  
+            })}
+            <div>
+                 {JSON.stringify(props.setTodoList)}
+            </div>
         </div>
+
     );
 }
 
