@@ -23,7 +23,6 @@ const TodoNew = (props:any) => {
         </div>
         <div>
           My text input value is : {valueInput}
-        
         </div>
       </>
         
